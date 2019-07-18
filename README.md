@@ -11,7 +11,7 @@ This is a basic database scheme with zoos, phone number and animals at the zoo. 
 
 ## Instructions
 
-Create a REST API server to store and read data from a H2 database. The table layouts should be
+This is REST API server which stores data in an H2 database. The table layouts should be
 
 * Zoo
   * zooid - long primary key
@@ -33,9 +33,6 @@ There is a many to many relationship between zoos and animals. A zoo may have ma
 
 The data.sql file seeds the Zoo Database
 
-Use the file data.sql to seed your database.
-
-
 ### The following end points should be working
 
 * GET /zoos/zoos - returns all zoos with their phone numbers and animals
@@ -53,7 +50,7 @@ For the PUT and POST you can assume you are sent all the data with the appropria
   * This should delete the Zoo, associated telephone numbers, and zoo animals combinations associated with this zoo.
 
 
-### You will need the following end points
+### You will need to get the following end points working
 
 * GET /animals/count -  that returns a JSON object list listing the animals and a count of how many zoos where they can be found. Use a custom query for this. 
 
