@@ -72,10 +72,6 @@ For the PUT and POST you can assume you are sent all the data with the appropria
 
 ### Stretch Goals
 
-* Expose the end point GET /zoos/zoos/(id) - returns the zoo identified by id with its phone numbers and animals
-
-* In the PUT /admin/zoos endpoint, return in the header a link to the zoo created with the endpoint /zoos/zoos/{id}
-
 * Expose the end point DELETE /admin/zoos/{zooid}/animals/{animalid} - delete the zoo animal combination based off of ids. 
   * Hint: @PathVariable("zooid") long zooid, @PathVariable("animalid") long animalid
 
