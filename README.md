@@ -109,6 +109,21 @@ For the PUT and POST you can assume you are sent all the data with the appropria
 
 * give /ADMIN access to /users
   * add end point /users/add to add a new user
+    * You can use this to test
+
+```
+{
+     "username": "john",
+     "userRoles": [
+         {
+             "role": {
+                 "roleid": 15
+             }
+         }
+     ]
+ }
+ ```
+
   * add end point /users/delete/{id} to delete a user based off of id
   * add end point /users/viewall to show all the users
   * add end point /users/view/{id} to show a user based off of if
