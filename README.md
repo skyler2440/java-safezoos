@@ -41,10 +41,40 @@ For the PUT and POST you can assume you are sent all the data with the appropria
 
 * PUT /admin/zoos/{id} - update the zoo referenced by the id number with the provided information
   * Update the Zoo and associated phone number. This does NOT address the Zoo Animal combinations! That would be a separate end point
+  
+  You could use to test:
+  ```
+{
+   "zooname": "SanDiegoZoo",
+   "telephones": [
+      {
+          "phonetype": "education",
+          "phonenumber": "555-777-777"
+      }
+   ]
+} 
+  ```
 
 * POST /admin/zoos - add the zoo
   * Add the Zoo and associated phone number(s). This does NOT address the Zoo Animal combinations! That would be a separate end point.
   * In the header return as the location of the newly created zoo POST /admin/zoos/{id}
+
+   You could use to test:
+```
+{
+   "zooname": "Port Angeles Zoo",
+   "telephones": [
+      {
+          "phonetype": "education",
+          "phonenumber": "555-777-777"
+      },
+      {
+          "phonetype": "main",
+          "phonenumber": "555-777-777"
+      }
+   ]
+}
+```
 
 * DELETE /admin/zoos/{id} - delete the zoo, associated phone numbers, and zoo animals combination associated with this zoo id
   * This should delete the Zoo, associated telephone numbers, and zoo animals combinations associated with this zoo.
