@@ -41,9 +41,9 @@ For the PUT and POST you can assume you are sent all the data with the appropria
 
 * PUT /admin/zoos/{id} - update the zoo referenced by the id number with the provided information
   * Update the Zoo and associated phone number. This does NOT address the Zoo Animal combinations! That would be a separate end point
+  * You could use to test:
   
-  You could use to test:
-  ```
+```
 {
    "zooname": "SanDiegoZoo",
    "telephones": [
@@ -53,13 +53,12 @@ For the PUT and POST you can assume you are sent all the data with the appropria
       }
    ]
 } 
-  ```
+```
 
 * POST /admin/zoos - add the zoo
   * Add the Zoo and associated phone number(s). This does NOT address the Zoo Animal combinations! That would be a separate end point.
   * In the header return as the location of the newly created zoo POST /admin/zoos/{id}
-
-   You could use to test:
+  * You could use to test:
 ```
 {
    "zooname": "Port Angeles Zoo",
