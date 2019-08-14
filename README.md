@@ -127,3 +127,5 @@ For the PUT and POST you can assume you are sent all the data with the appropria
   * add end point /users/delete/{id} to delete a user based off of id
   * add end point /users/viewall to show all the users
   * add end point /users/view/{id} to show a user based off of if
+  
+  * add auditing fields to zooanimals join table
