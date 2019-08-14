@@ -58,21 +58,6 @@ public class ZooServiceImpl implements ZooService
         }
     }
 
-    @Transactional
-    @Override
-    public void deleteZooAnimalCombo(long zooid, long animalid)
-    {
-        if (zoorepos.checkZooAnimalCombo(zooid, animalid).getCount() > 0)
-        {
-            zoorepos.deleteZooAnimalCombo(zooid, animalid);
-
-            logger.info("Zoo Animal Combo Deleted");
-        }
-        else
-        {
-            throw new EntityNotFoundException("Zoo id = " + Long.toString(zooid) + " Animal id = " + Long.toString(animalid));
-        }
-    }
 
     @Transactional
     @Override
@@ -90,17 +75,6 @@ public class ZooServiceImpl implements ZooService
         logger.info("Updating a Zoo");
         return zoorepos.save(newZoo);
     }
-
-
-    @Transactional
-    @Override
-    public void saveZooAnimalCombo(long zooid, long animalid)
-    {
-        zoorepos.saveZooAnimalCombo(zooid, animalid);
-
-        logger.info("Zoo Animal Combo Inserted");
-    }
-
 
 
     @Transactional

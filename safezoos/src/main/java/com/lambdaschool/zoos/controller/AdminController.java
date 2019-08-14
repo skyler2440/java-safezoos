@@ -63,18 +63,6 @@ public class AdminController
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/zoos/{zooid}/animals/{animalid}")
-    public ResponseEntity<?> deleteZooAnimalCombo(
-            @PathVariable("zooid")
-                    long zooid,
-            @PathVariable("animalid")
-                    long animalid)
-    {
-        zooService.deleteZooAnimalCombo(zooid, animalid);
-
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
     @PostMapping(value = "/zoos/{zooid}/animals/{animalid}")
     public ResponseEntity<?> saveZooAnimalCombo(HttpServletRequest request,
             @PathVariable("zooid")
@@ -82,7 +70,7 @@ public class AdminController
             @PathVariable("animalid")
                     long animalid)
     {
-        zooService.saveZooAnimalCombo(zooid, animalid);
+//        zooService.saveZooAnimalCombo(zooid, animalid);
 
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();
