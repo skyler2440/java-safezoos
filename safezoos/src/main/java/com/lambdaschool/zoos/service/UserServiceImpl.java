@@ -3,6 +3,7 @@ package com.lambdaschool.zoos.service;
 import com.lambdaschool.zoos.model.User;
 import com.lambdaschool.zoos.repository.RoleRepository;
 import com.lambdaschool.zoos.repository.UserRepository;
+import org.slf4j.ILoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,6 +11,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service(value="userService")
@@ -33,7 +36,9 @@ public class UserServiceImpl implements UserDetailsService, UserService
     @Override
     public List<User> findAll()
     {
-        return null;
+        ArrayList<User> list = new ArrayList<>();
+        userrepos.findAll().iterator().forEachRemaining(list::add);
+        return list;
     }
 
     @Override
@@ -43,15 +48,23 @@ public class UserServiceImpl implements UserDetailsService, UserService
     }
 
     @Override
-    public User findUserById(long id)
+    public User findUserById(long id) throws EntityNotFoundException
     {
-        return null;
+        return userrepos.findById(id).orElseThrow(() -> new EntityNotFoundException(Long.toString(id)));
     }
 
+    @Transactional
     @Override
-    public void delete(long id)
+    public void delete(long id) throws EntityNotFoundException
     {
+        if (userrepos.findById(id).isPresent())
+        {
+            userrepos.deleteById(id);
 
+        }else
+        {
+            throw new EntityNotFoundException(Long.toString(id));
+        }
     }
 
     @Override
