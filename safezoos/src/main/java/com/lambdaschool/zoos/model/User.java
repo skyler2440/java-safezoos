@@ -31,11 +31,11 @@ public class User extends Auditable
     @JsonIgnoreProperties("user")
     private List<UserRoles> userRoles = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    @JsonIgnoreProperties("user")
-    private List<Zoo> zoos = new ArrayList<>();
+//    @OneToMany(mappedBy = "user",
+//            cascade = CascadeType.ALL,
+//            orphanRemoval = true)
+//    @JsonIgnoreProperties("user")
+//    private List<Zoo> zoos = new ArrayList<>();
 
     public User()
     {
@@ -98,15 +98,15 @@ public class User extends Auditable
         this.userRoles = userRoles;
     }
 
-    public List<Zoo> getZoos()
-    {
-        return zoos;
-    }
-
-    public void setZoos(List<Zoo> zoos)
-    {
-        this.zoos = zoos;
-    }
+//    public List<Zoo> getZoos()
+//    {
+//        return zoos;
+//    }
+//
+//    public void setZoos(List<Zoo> zoos)
+//    {
+//        this.zoos = zoos;
+//    }
 
     public List<SimpleGrantedAuthority> getAuthority()
     {
